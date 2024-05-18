@@ -7,7 +7,7 @@ https://github.com/radicalxdev/mission-quizify
 
 ### <b>Project Status: Completed 5/18/2024</b>
 
-## Streamlit Web Application
+## Streamlit Web Application (Screenshot)
 
 <p align='left'>
 <img src='screenshots/streamlit_app_screenshot.png' alt='Streamlit app screenshot.' style='width:450px; height:405px;' />
