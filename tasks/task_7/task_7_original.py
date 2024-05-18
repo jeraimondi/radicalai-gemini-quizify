@@ -72,11 +72,7 @@ class QuizGenerator:
         """
         self.llm = VertexAI(
             ############# YOUR CODE HERE ############
-            model_name="gemini-pro",
-            temperature=0.5,
-            max_output_tokens=500
         )
-
         
     def generate_question_with_vectorstore(self):
         """
@@ -105,12 +101,7 @@ class QuizGenerator:
         """
         ############# YOUR CODE HERE ############
         # Initialize the LLM from the 'init_llm' method if not already initialized
-        if self.llm is None:
-            self.init_llm()
-
         # Raise an error if the vectorstore is not initialized on the class
-        if self.vectorstore is None:
-            raise ValueError("Vectorstore is not provided")
         ############# YOUR CODE HERE ############
         
         from langchain_core.runnables import RunnablePassthrough, RunnableParallel
@@ -118,13 +109,11 @@ class QuizGenerator:
         ############# YOUR CODE HERE ############
         # Enable a Retriever using the as_retriever() method on the VectorStore object
         # HINT: Use the vectorstore as the retriever initialized on the class
-        retriever = self.vectorstore.db.as_retriever()
         ############# YOUR CODE HERE ############
         
         ############# YOUR CODE HERE ############
         # Use the system template to create a PromptTemplate
         # HINT: Use the .from_template method on the PromptTemplate class and pass in the system template
-        prompt = PromptTemplate.from_template(self.system_template)
         ############# YOUR CODE HERE ############
         
         # RunnableParallel allows Retriever to get relevant documents
@@ -136,7 +125,6 @@ class QuizGenerator:
         ############# YOUR CODE HERE ############
         # Create a chain with the Retriever, PromptTemplate, and LLM
         # HINT: chain = RETRIEVER | PROMPT | LLM 
-        chain = setup_and_retrieval | prompt | self.llm
         ############# YOUR CODE HERE ############
 
         # Invoke the chain with the topic as input
@@ -150,10 +138,11 @@ if __name__ == "__main__":
     from tasks.task_4.task_4 import EmbeddingClient
     from tasks.task_5.task_5 import ChromaCollectionCreator
     
+    
     embed_config = {
-    "model_name": "textembedding-gecko@003",
-    "project": "mission-quizzify-01",
-    "location": "us-east1"
+        "model_name": "textembedding-gecko@003",
+        "project": "YOUR-PROJECT-ID-HERE",
+        "location": "us-central1"
     }
     
     screen = st.empty()

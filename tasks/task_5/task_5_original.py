@@ -8,8 +8,7 @@ from tasks.task_4.task_4 import EmbeddingClient
 
 # Import Task libraries
 from langchain_core.documents import Document
-#from langchain.text_splitter import CharacterTextSplitter
-from langchain_text_splitters import CharacterTextSplitter
+from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 
 class ChromaCollectionCreator:
@@ -58,16 +57,6 @@ class ChromaCollectionCreator:
         # Use a TextSplitter from Langchain to split the documents into smaller text chunks
         # https://python.langchain.com/docs/modules/data_connection/document_transformers/character_text_splitter
         # [Your code here for splitting documents]
-
-        # Create a text splitter
-        text_splitter = CharacterTextSplitter(
-            separator="\n", # changed default "\n\n" to single line separator
-            chunk_size=1000,
-            chunk_overlap=200
-        )
-
-        # Split documents from processor pages using text splitter
-        texts = text_splitter.split_documents(self.processor.pages)
         
         if texts is not None:
             st.success(f"Successfully split pages to {len(texts)} documents!", icon="✅")
@@ -76,9 +65,6 @@ class ChromaCollectionCreator:
         # https://docs.trychroma.com/
         # Create a Chroma in-memory client using the text chunks and the embeddings model
         # [Your code here for creating Chroma collection]
-
-        # Create a Chroma collection from documents
-        self.db = Chroma.from_documents(texts, self.embed_model)
         
         if self.db:
             st.success("Successfully created Chroma Collection!", icon="✅")
@@ -107,8 +93,8 @@ if __name__ == "__main__":
     
     embed_config = {
         "model_name": "textembedding-gecko@003",
-        "project": "mission-quizzify-01",
-        "location": "us-east1"
+        "project": "YOUR PROJECT ID HERE",
+        "location": "us-central1"
     }
     
     embed_client = EmbeddingClient(**embed_config) # Initialize from Task 4
@@ -121,4 +107,3 @@ if __name__ == "__main__":
         submitted = st.form_submit_button("Submit")
         if submitted:
             chroma_creator.create_chroma_collection()
-    
