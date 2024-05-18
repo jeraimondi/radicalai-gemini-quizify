@@ -19,7 +19,7 @@ https://github.com/radicalxdev/mission-quizify
 <a href='https://youtu.be/RxMbnFRdpx0'><img src='screenshots/presentation_title_slide.png' alt='Presentation title slide.' style='width:480px; height:270px;' /></a>
 </p>
 
-* [Presented by Jason Raimondi](https://youtu.be/7oCtnlkGJmo?t=00m00s)
+* [Presented by Jason Raimondi](https://youtu.be/RxMbnFRdpx0?t=00m00s)
   * Introduction
   * Live Web App Demo
   * Approach
