@@ -10,7 +10,7 @@ https://github.com/radicalxdev/mission-quizify
 ## Streamlit Web Application
 
 <p align='left'>
-<a href='https://ai-content-detector.azurewebsites.net'><img src='screenshots/streamlit_app_screenshot.png' alt='Streamlit app screenshot.' style='width:450px; height:405px;' /></a>
+<img src='screenshots/streamlit_app_screenshot.png' alt='Streamlit app screenshot.' style='width:450px; height:405px;' />
 </p>
 
 ## Presentation
