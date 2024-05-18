@@ -2,7 +2,7 @@
 
 This is a guided mission part of Radical AI's Internship Program.
 
-The original repository can be found here:
+This repository was originally cloned from:<br>
 https://github.com/radicalxdev/mission-quizify
 
 ### <b>Project Status: Completed 5/18/2024</b>
